@@ -20,6 +20,8 @@ def get_phone_numbers_for_countries(list_phones):
     "SG": []  # Singapore	SG	+65
 }
     for phone in normalized_list:
+        if phone == '':
+            continue
         if phone[:2] in "81": 
             sorted_list["JP"].append(phone)  
         elif phone[:3] in "886":
@@ -30,7 +32,7 @@ def get_phone_numbers_for_countries(list_phones):
             sorted_list["UA"].append(phone)  
 
     return sorted_list
-print(get_phone_numbers_for_countries(['+380-(99)-875-94-05', '+81-876-53-47', '+886 765 89 76', '+65-765-89-76']))
+print(get_phone_numbers_for_countries(['+380-(99)-875-94-05', '+81-876-53-47', '+886 765 89 76', '+65-765-89-76', '']))
 
     
     
